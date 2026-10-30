@@ -1,0 +1,5 @@
+{% extends "base.html" %}{% block title %}Place Order | CampusCanteen{% endblock %}{% block content %}
+<div class="form-wrap"><p class="eyebrow">ORDER IN A FEW CLICKS</p><h1>Place your order</h1><p class="muted">Enter your details and choose an item.</p>
+<form method="post" class="form-card"><label for="customer_name">Your name</label><input id="customer_name" name="customer_name" maxlength="100" required placeholder="Your name">
+<label for="food_id">Choose food</label><select id="food_id" name="food_id" required><option value="">Select an item</option>{% for food in foods %}<option value="{{ food.id }}">{{ food.name }} — ₹{{ '%.2f'|format(food.price) }}</option>{% endfor %}</select>
+<label for="quantity">Quantity (1–20)</label><input id="quantity" name="quantity" type="number" min="1" max="20" value="1" required><button class="button full" type="submit">Place order & generate bill</button></form></div>{% endblock %}

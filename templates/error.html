@@ -1,0 +1,2 @@
+{% extends "base.html" %}{% block title %}Database issue | CampusCanteen{% endblock %}{% block content %}
+<section class="error-card"><div class="error-icon">!</div><h1>Database connection issue</h1><p class="muted">The app could not complete this request. Check MySQL is running and database columns match the project schema.</p><p class="muted">The detailed error should appear in the VS Code terminal.</p><a class="button" href="{{ url_for('home') }}">Try again</a></section>{% endblock %}
